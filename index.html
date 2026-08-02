@@ -39,14 +39,12 @@
   .panel{
     position:absolute; top:0; height:100%; width:50%;
     overflow:hidden; display:flex; align-items:center; justify-content:center;
-    transition: filter .8s ease;
   }
   .panel.left{ left:0; }
   .panel.right{ right:0; }
 
   .bg-layer{
-    position:absolute; inset:-4%; will-change:transform;
-    transition: transform 1.2s cubic-bezier(.16,.7,.3,1), filter 1s ease;
+    position:absolute; inset:-4%;
   }
 
   /* --- Bulevar backdrop: night city --- */
@@ -60,56 +58,21 @@
     width:100%;
     height:100%;
     object-fit:cover;
-
     transform:none;
-
-    transition:
-        filter .8s ease;
-
-    filter:
-        brightness(.65)
-        saturate(1.15)
-        contrast(1.05);
+    /* Darkening/mood is handled by .overlay's opacity instead of a CSS
+       filter on the video itself — a filter here forces every decoded
+       frame of a fullscreen playing video through the GPU filter-effects
+       pipeline instead of the browser's cheap direct compositing path. */
 }
-  .bg-city{
-    background:
-      radial-gradient(ellipse at 30% 15%, rgba(160,195,230,0.20), transparent 55%),
-      linear-gradient(180deg, var(--l-bg1) 0%, var(--l-bg2) 55%, #0a1424 100%);
-  }
-  .skyline{ position:absolute; left:0; right:0; bottom:0; height:62%; display:flex; align-items:flex-end; gap:2px; opacity:.9;}
-  .bldg{ flex:0 0 auto; background:linear-gradient(180deg,#0c1626,#060a12); position:relative; box-shadow: inset 0 0 40px rgba(0,0,0,.6);}
-  .bldg::before{ content:''; position:absolute; inset:0; background-image:
-      repeating-linear-gradient(0deg, rgba(255,208,120,0.55) 0 2px, transparent 2px 14px),
-      repeating-linear-gradient(90deg, rgba(255,208,120,0.35) 0 2px, transparent 2px 16px);
-      opacity:.35; mix-blend-mode:screen; animation: flicker 7s ease-in-out infinite; }
-  .rain{ position:absolute; inset:0; background:linear-gradient(180deg, transparent 0%, rgba(70,110,150,0.08) 100%); }
-  .reflection{ position:absolute; left:0; right:0; bottom:0; height:18%; background:linear-gradient(180deg, rgba(90,130,175,0.18), transparent); filter:blur(2px); }
+  /* The CSS-only "night city" / "golden vineyard" backdrop system (skyline,
+     rain, sun, hills, vines, water + their keyframes) was fully superseded
+     by the .video-bg <video> backgrounds and is no longer referenced by any
+     element in the page — removed as dead weight (smaller stylesheet, less
+     work for the style engine, and it's exactly what Lighthouse flags as
+     "unused CSS"). */
 
-  @keyframes flicker{ 0%,100%{opacity:.28;} 45%{opacity:.4;} 50%{opacity:.2;} 78%{opacity:.36;} }
-  @keyframes driftSlow{ from{ transform:translate(0,0) scale(1.02);} to{ transform:translate(-1.2%, -0.6%) scale(1.06);} }
-
-  /* --- Emporia backdrop: golden vineyard --- */
-  .bg-vine{
-    background:
-      radial-gradient(ellipse at 70% 20%, rgba(255,205,130,0.35), transparent 55%),
-      linear-gradient(180deg, #3a2712 0%, #2a1c0f 45%, #150e07 100%);
-  }
-  .sun{ position:absolute; top:16%; right:22%; width:180px; height:180px; border-radius:50%;
-    background: radial-gradient(circle, rgba(255,224,170,0.9), rgba(255,190,110,0.25) 45%, transparent 70%);
-    filter: blur(2px); animation: sunPulse 9s ease-in-out infinite; }
-  @keyframes sunPulse{ 0%,100%{opacity:.8;} 50%{opacity:1;} }
-  .hills{ position:absolute; left:0; right:0; bottom:0; height:60%; }
-  .hill{ position:absolute; left:-10%; right:-10%; border-radius:50% 50% 0 0/18% 18% 0 0; }
-  .hill1{ bottom:0; height:70%; background:linear-gradient(180deg,#241708,#150d05); }
-  .hill2{ bottom:8%; height:55%; background:linear-gradient(180deg,#2f2110,#1c130a); opacity:.9;}
-  .hill3{ bottom:18%; height:38%; background:linear-gradient(180deg,#3c2a14,#241a0d); opacity:.85;}
-  .vines{ position:absolute; inset:0; background-image:repeating-linear-gradient(100deg, rgba(60,40,15,0.5) 0 2px, transparent 2px 22px); opacity:.5; animation: sway 12s ease-in-out infinite; }
-  @keyframes sway{ 0%,100%{ transform:translateX(0);} 50%{ transform:translateX(6px);} }
-  @keyframes driftSlowR{ from{ transform:translate(0,0) scale(1.02);} to{ transform:translate(1.2%, -0.6%) scale(1.06);} }
-  .water{ position:absolute; left:6%; right:6%; bottom:6%; height:12%; border-radius:6px; background:linear-gradient(180deg, rgba(255,205,140,0.25), rgba(120,80,40,0.05)); filter:blur(1px); }
-
-  .overlay{ position:absolute; inset:0; background:rgba(0,0,0,.42); transition:background 1s ease; }
-  .panel:hover .overlay{ background:rgba(4,4,6,0.48); }
+  .overlay{ position:absolute; inset:0; background:#000; opacity:.62; transition:opacity .6s ease; }
+  .panel:hover .overlay{ opacity:.66; }
   .vignette{ position:absolute; inset:0; background:radial-gradient(ellipse at center, transparent 35%, rgba(0,0,0,0.55) 100%); pointer-events:none; }
 
   /* ---------- CONTENT ---------- */
@@ -127,7 +90,7 @@
   .cta{
     position:relative; width:min(390px,80vw); height:78px; border-radius:999px;
     background: var(--glass-bg); border:1px solid var(--glass-border);
-    backdrop-filter: blur(40px) saturate(140%); -webkit-backdrop-filter: blur(40px) saturate(140%);
+    backdrop-filter: blur(24px) saturate(140%); -webkit-backdrop-filter: blur(24px) saturate(140%);
     display:flex; align-items:center; gap:18px; padding:0 12px 0 12px; cursor:pointer;
     transition: transform .35s cubic-bezier(.2,.8,.3,1), background .35s ease, box-shadow .35s ease;
   }
@@ -138,9 +101,9 @@
   .cta .cta-title{ font-size:14.5px; letter-spacing:1.5px; font-weight:500; }
   .cta .cta-sub{ font-size:12px; opacity:.65; margin-top:3px; font-weight:300; }
 
-  .cta-left:hover{ transform:translateY(-4px); background:rgba(120,165,215,0.14); box-shadow:0 20px 60px -10px var(--l-glow); }
+  .cta-left:hover{ transform:translateY(-4px); background:rgba(120,165,215,0.14);}
   .cta-left:hover .arrow{ transform:rotate(10deg); background:rgba(160,200,240,0.18); }
-  .cta-right:hover{ transform:translateY(-4px); background:rgba(215,175,110,0.16); box-shadow:0 20px 60px -10px var(--r-glow); }
+  .cta-right:hover{ transform:translateY(-4px); background:rgba(215,175,110,0.16); }
   .cta-right:hover .arrow{ transform:rotate(10deg); background:rgba(235,205,150,0.2); }
 
   @keyframes floatY{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-5px);} }
@@ -159,14 +122,19 @@
   .loader{ width:220px; height:3px; border-radius:999px; background:rgba(255,255,255,0.12); position:relative; overflow:hidden; margin:0 auto; }
   .loader::after{ content:''; position:absolute; top:0; left:0; height:100%; width:36px; border-radius:999px;
     background:linear-gradient(90deg, transparent, rgba(255,255,255,0.9), transparent);
-    animation: loaderMove 3.2s ease-in-out infinite; }
-  @keyframes loaderMove{ 0%{ left:-15%;} 50%{ left:60%;} 100%{ left:105%;} }
+    animation: loaderMove 3.2s ease-in-out infinite; will-change:transform; }
+  /* Runs forever on this page, so it must animate transform (compositor-only)
+     instead of `left` (a layout property that forced a layout+paint every
+     frame, indefinitely, for as long as the page stays open). Pixel values
+     below reproduce the original -15%/60%/105% offsets against the loader's
+     fixed 220px track width. */
+  @keyframes loaderMove{ 0%{ transform:translateX(-33px);} 50%{ transform:translateX(132px);} 100%{ transform:translateX(231px);} }
 
   /* ---------- TOP UI ---------- */
   .pill{
     position:absolute; top:36px; height:46px; padding:0 20px; border-radius:999px; z-index:7;
     background:var(--glass-bg); border:1px solid var(--glass-border);
-    backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px);
+    backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
     display:flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:1px;
     cursor:pointer; transition: background .25s ease, transform .25s ease;
   }
@@ -275,8 +243,8 @@ html.about-modal-lock body{
   opacity:1;
   visibility:visible;
   background:rgba(6,8,12,.62);
-  backdrop-filter:blur(18px) saturate(130%);
-  -webkit-backdrop-filter:blur(18px) saturate(130%);
+  backdrop-filter:blur(14px) saturate(130%);
+  -webkit-backdrop-filter:blur(14px) saturate(130%);
   transition:
     opacity .6s cubic-bezier(.19,1,.22,1),
     background .7s cubic-bezier(.19,1,.22,1),
@@ -297,8 +265,8 @@ html.about-modal-lock body{
     0 40px 120px rgba(0,0,0,.55),
     0 1px 0 rgba(255,255,255,.08) inset,
     0 0 0 1px rgba(255,255,255,.02) inset;
-  backdrop-filter:blur(30px) saturate(140%);
-  -webkit-backdrop-filter:blur(30px) saturate(140%);
+  backdrop-filter:blur(20px) saturate(140%);
+  -webkit-backdrop-filter:blur(20px) saturate(140%);
   opacity:0;
   transform:scale(.95) translateY(14px);
   transition:
@@ -526,7 +494,7 @@ html.about-modal-lock body{
   <!-- RIGHT: HOTEL EMPORIA -->
   <div class="panel right" id="panelRight">
    <div class="bg-layer video-bg" id="bgRight">
-    <video autoplay muted loop playsinline preload="auto">
+    <video id="emporiaVideo" autoplay muted loop playsinline preload="auto">
         <source src="videos/emporia-video-dron.mp4" type="video/mp4">
     </video>
 </div>
@@ -595,35 +563,40 @@ html.about-modal-lock body{
 </div>
 
 <script>
-  // Build a randomized but stable skyline (skipped if #skylineWrap isn't present)
-  (function(){
-    const wrap = document.getElementById('skylineWrap');
+/* ---------- HERO VIDEOS ---------- */
+(function(){
+  var bulevarVideo = document.getElementById('bulevarVideo');
+  var emporiaVideo = document.getElementById('emporiaVideo');
+  var videos = [bulevarVideo, emporiaVideo].filter(Boolean);
 
-    if(!wrap){
-      return;
-    }
+  if(bulevarVideo){
+    bulevarVideo.addEventListener('canplay', function(){
+      // 1.5x keeps the loop feeling brisk while asking the decoder for far
+      // fewer frames per second of wall-clock time than 2.5x did, cutting
+      // dropped-frame risk and CPU/GPU decode load noticeably.
+      bulevarVideo.playbackRate = 1.5;
+      bulevarVideo.play();
+    });
+  }
 
-    const count = 26;
-    let seed = 7;
-    function rand(){ seed = (seed*9301+49297) % 233280; return seed/233280; }
-    for(let i=0;i<count;i++){
-      const b = document.createElement('div');
-      b.className='bldg';
-      const w = 3 + rand()*4.2;
-      const h = 18 + rand()*80;
-      b.style.width = w+'%';
-      b.style.height = h+'%';
-      wrap.appendChild(b);
-    }
-  })();
+  // Pause whichever hero video scrolls out of view (relevant at the mobile
+  // breakpoint where the two panels stack and only one is on screen at a
+  // time) so an off-screen <video> stops decoding/compositing entirely.
+  if('IntersectionObserver' in window && videos.length){
+    var videoObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var v = entry.target;
+        if(entry.isIntersecting){
+          v.play().catch(function(){});
+        } else {
+          v.pause();
+        }
+      });
+    }, { threshold: 0 });
 
-  
-const video = document.getElementById("bulevarVideo");
-
-video.addEventListener("canplay", () => {
-    video.playbackRate = 2.5;
-    video.play();
-});
+    videos.forEach(function(v){ videoObserver.observe(v); });
+  }
+})();
 
 /* ---------- ABOUT OUR HOTELS MODAL ---------- */
 (function(){
