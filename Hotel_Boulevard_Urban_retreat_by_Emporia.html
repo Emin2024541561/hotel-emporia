@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Boulevar — Urban retreat by Emporia</title>
+<meta name="description" content="Hotel Boulevar by Emporia — an intimate 18-room luxury boutique hotel in the heart of Mostar, Bosnia and Herzegovina. Rooftop spa, indoor pool, fine dining, and UNESCO Old Town at your doorstep.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/png" href="images/logo-bulevar1.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div id="loading-screen" class="fixed inset-0 z-[100] bg-rich-black flex flex-col items-center justify-center overflow-hidden" aria-live="polite">
+<div class="loading-glow absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-gold/5 blur-3xl">
+</div>
+<div class="text-center relative loading-title">
+<div class="loading-line h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mb-7">
+</div>
+<h1 class="font-display text-xl md:text-3xl text-white tracking-[0.25em] font-light">BOULEVAR</h1>
+<p class="text-[8px] md:text-[9px] tracking-[0.5em] uppercase text-white/25 font-body mt-2">Urban retreat · by Emporia</p>
+<div class="loading-line h-px bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-7">
+</div>
+</div>
+<div class="mt-12 w-28 h-px bg-white/[0.05] rounded-full overflow-hidden">
+<div class="loading-bar h-full bg-gradient-to-r from-gold/50 to-gold rounded-full">
+</div>
+</div>
+</div>
+<div id="app" hidden>
+<nav id="site-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-700 bg-transparent" aria-label="Primary navigation">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16">
+<div id="nav-inner" class="flex items-center justify-between transition-all duration-700 h-18">
+<a href="#home" class="relative z-10 js-scroll">
+<span id="brand" class="font-display text-base md:text-lg font-semibold tracking-[0.15em] transition-colors duration-700 text-white">BOULEVAR</span>
+<span id="brand-sub" class="block font-body text-[7px] md:text-[8px] tracking-[0.35em] uppercase transition-colors duration-700 text-white/60">Urban retreat · by Emporia</span>
+</a>
+<div class="hidden lg:flex items-center gap-6">
+<a href="#hotel" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Hotel<span>
+</span>
+</a>
+<a href="#rooms" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Rooms<span>
+</span>
+</a>
+<a href="#dining" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Dining<span>
+</span>
+</a>
+<a href="#pool" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Spa &amp; Pool<span>
+</span>
+</a>
+<a href="#events" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Events<span>
+</span>
+</a>
+<a href="#gallery" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Gallery<span>
+</span>
+</a>
+<a href="#contact" class="nav-link relative font-body text-[11px] tracking-[0.1em] uppercase transition-all duration-400 text-white/60">Contact<span>
+</span>
+</a>
+</div>
+<div class="flex items-center gap-3">
+<a id="nav-book" href="#booking" class="hidden md:inline-flex items-center px-5 py-2 rounded-full text-[10px] tracking-[0.14em] uppercase font-medium transition-all duration-500 glass text-white">Book Now</a>
+<button id="menu-toggle" class="lg:hidden p-2 rounded-full transition-colors text-white" aria-label="Toggle menu" aria-expanded="false">
+<span class="menu-icon">☰</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<aside id="mobile-menu" class="fixed inset-0 z-40 flex flex-col" hidden aria-label="Mobile navigation">
+<div class="absolute inset-0 bg-rich-black/95 backdrop-blur-2xl">
+</div>
+<div class="relative flex flex-col items-center justify-center flex-1 gap-5 pt-16">
+<a href="#hotel">Hotel</a>
+<a href="#rooms">Rooms</a>
+<a href="#dining">Dining</a>
+<a href="#pool">Spa &amp; Pool</a>
+<a href="#events">Events</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+<a href="#booking" class="mt-6 px-8 py-3 rounded-full bg-gold text-white text-sm tracking-[0.15em] uppercase font-medium">Book Now</a>
+<div class="mt-6 flex flex-col items-center gap-2 text-white/25 text-[10px] tracking-wider">
+<p>+387 63 001 005</p>
+<p>office@bulevaremporia.com</p>
+<p>Mostar, BiH</p>
+</div>
+</div>
+</aside>
+<main>
+<section id="home" class="relative h-svh min-h-[600px] overflow-hidden scene-dark">
+<div class="absolute inset-0 bg-rich-black">
+<video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover" aria-hidden="true">
+<source src="videos/DJI_20260725201057_0178_D_stabilized.mp4" type="video/mp4">
+</video>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/15 to-black/60">
+</div>
+<div class="absolute inset-0 bg-gradient-to-r from-black/40 via-transparent to-transparent">
+</div>
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="hero-ray absolute -top-20 right-1/4 w-[200px] h-[120%] bg-gradient-to-b from-white/5 via-white/2 to-transparent rotate-12 blur-2xl">
+</div>
+<div class="hero-ray gold absolute -top-20 right-1/3 w-[120px] h-[120%] bg-gradient-to-b from-gold/5 via-transparent to-transparent rotate-6 blur-xl">
+</div>
+</div>
+<div id="particles" class="absolute inset-0 pointer-events-none">
+</div>
+<div id="hero-content" class="relative z-10 h-full flex flex-col justify-center items-center px-6 md:px-10">
+<div class="text-center max-w-5xl mx-auto">
+<h1 class="font-display text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] text-white font-light leading-[1.08] tracking-wide">
+<span class="blur-reveal" data-delay=".5"> Essence over</span>
+<br>
+<span class="italic text-gold blur-reveal" data-delay=".9">excess</span>
+</h1>
+<div class="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 hero-cta">
+<div class="magnetic">
+<a href="#booking" class="js-scroll inline-flex items-center px-8 py-3.5 md:px-10 md:py-4 rounded-full bg-gold text-white text-[12px] md:text-[13px] tracking-[0.14em] uppercase font-medium hover:bg-gold-dark transition-all duration-500 hover:shadow-[0_0_40px_rgba(201,169,110,0.3)] relative overflow-hidden">Book Your Stay</a>
+</div>
+<div class="magnetic">
+<a href="#hotel" class="js-scroll inline-flex items-center px-8 py-3.5 md:px-10 md:py-4 rounded-full glass text-white text-[12px] md:text-[13px] tracking-[0.14em] uppercase font-medium hover:bg-white/15 transition-all duration-500">Explore the Hotel</a>
+</div>
+</div>
+</div>
+</div>
+<div id="scroll-indicator" class="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2">
+<span class="text-white/30 text-[8px] md:text-[9px] tracking-[0.25em] uppercase font-body">Scroll to Discover</span>
+<span class="text-white/30 animate-scroll-bounce">⌄</span>
+</div>
+<div id="hero-bottom" class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-ivory to-transparent z-10 pointer-events-none">
+</div>
+</section>
+<section id="hotel" class="scene scene-light">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none" aria-hidden="true">
+<div class="font-display text-[14vw] font-light th-watermark whitespace-nowrap tracking-wider leading-none">BOULEVAR</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+<div>
+<div class="mask-reveal">
+<span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-5">The Hotel</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] th-heading font-light leading-tight">
+<span class="split-text">Emporia experience</span>
+<br>
+<span class="italic split-text" data-delay=".3">In The Heart of Mostar</span>
+</h2>
+<p class="reveal mt-5 th-body text-sm md:text-base leading-relaxed max-w-lg font-body font-light">Intimate in scale, with just 18 rooms, Hotel Boulevar by Emporia distils luxury hospitality into an immediate, urban expression — defined by discretion and architectural clarity.</p>
+<div class="mt-6 flex flex-wrap gap-2 stagger">
+<span class="px-4 py-2 rounded-full th-card text-xs tracking-[0.08em] th-body font-body">Boutique Scale</span>
+<span class="px-4 py-2 rounded-full th-card text-xs tracking-[0.08em] th-body font-body">Rooftop Spa</span>
+<span class="px-4 py-2 rounded-full th-card text-xs tracking-[0.08em] th-body font-body">Indoor Pool</span>
+<span class="px-4 py-2 rounded-full th-card text-xs tracking-[0.08em] th-body font-body">UNESCO Proximity</span>
+</div>
+</div>
+<div class="reveal from-right">
+<div class="relative overflow-hidden rounded-3xl h-[45vh] md:h-[55vh] group">
+<img src="images/dron_vani.jpg" alt="Hotel Boulevar exterior" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" loading="lazy">
+<div class="absolute bottom-4 left-4">
+<span class="glass-frost px-4 py-2 rounded-full text-white text-[10px] tracking-wider uppercase">Architectural Refinement</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="philosophy" class="scene scene-dark video-scene">
+<video class="video-scene-media" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+<source src="images/HnVideoEditor_2026_07_30_020249713.mp4" type="video/mp4">
+</video>
+<div class="video-scene-overlay" aria-hidden="true"></div>
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative z-10">
+<div class="text-center mb-10 md:mb-14">
+<div class="mask-reveal">
+<blockquote class="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl th-heading italic font-light leading-snug max-w-4xl mx-auto">“Made for Meaningful Stays.”</blockquote>
+</div>
+<p class="reveal mt-4 th-accent text-xs tracking-[0.25em] uppercase font-body">— The Emporia Philosophy</p>
+</div>
+<div id="stats" class="grid grid-cols-3 md:grid-cols-6 gap-4 stagger">
+  <div class="text-center p-4 rounded-2xl th-card"><span class="th-icon">▰</span><div class="stat-value font-display text-2xl th-heading font-light" data-value="18">0</div><p class="mt-1 text-[9px] th-body tracking-wider font-body uppercase">Luxury Rooms</p></div>
+  <div class="text-center p-4 rounded-2xl th-card"><span class="th-icon">≈</span><div class="font-display text-2xl th-heading font-light">∞</div><p class="mt-1 text-[9px] th-body tracking-wider font-body uppercase">Rooftop Pool</p></div>
+  <div class="text-center p-4 rounded-2xl th-card"><span class="th-icon">◈</span><div class="font-display text-2xl th-heading font-light">1</div><p class="mt-1 text-[9px] th-body tracking-wider font-body uppercase">Private Winery</p></div>
+  <div class="text-center p-4 rounded-2xl th-card"><span class="th-icon">♜</span><div class="stat-value font-display text-2xl th-heading font-light" data-value="54">0</div><p class="mt-1 text-[9px] th-body tracking-wider font-body uppercase">Guest Capacity</p></div>
+  <div class="text-center p-4 rounded-2xl th-card"><span class="th-icon">✦</span><div class="font-display text-2xl th-heading font-light">✦</div><p class="mt-1 text-[9px] th-body tracking-wider font-body uppercase">Premium Spa</p></div>
+  <div class="text-center p-4 rounded-2xl th-card"><span class="th-icon">◇</span><div class="stat-value font-display text-2xl th-heading font-light" data-value="2">0</div><p class="mt-1 text-[9px] th-body tracking-wider font-body uppercase">Min to Bridge</p></div>
+</div>
+<div class="reveal mt-10 md:mt-14">
+<div class="relative overflow-hidden rounded-3xl h-[28vh] md:h-[32vh] group">
+<div class="relative overflow-hidden rounded-3xl h-[28vh] md:h-[32vh] group">
+
+    <video
+        class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source src="images/HnVideoEditor_2026_07_30_020249713.mp4" type="video/mp4">
+    </video>
+
+    <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+
+    <div class="absolute bottom-4 left-4 right-4">
+        <p class="glass-frost inline-block px-4 py-2 rounded-xl text-white text-xs font-body font-light">
+            Two minutes from Stari Most — UNESCO World Heritage
+        </p>
+    </div>
+
+</div><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent">
+</div>
+<div class="absolute bottom-4 left-4 right-4">
+<p class="glass-frost inline-block px-4 py-2 rounded-xl text-white text-xs font-body font-light">Two minutes from Stari Most — UNESCO World Heritage</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="rooms" class="scene scene-dark">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative">
+<div class="text-center mb-8 md:mb-12">
+<div class="mask-reveal">
+<span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-4">Accommodation</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl th-heading font-light leading-tight">
+<span class="split-text">18 Rooms of</span>
+<br>
+<span class="italic split-text" data-delay=".2">Quiet Refinement</span>
+</h2>
+</div>
+<div id="room-cards" class="grid grid-cols-1 md:grid-cols-3 gap-5">
+  <div class="room-tilt reveal">
+    <article class="room-card th-card rounded-3xl overflow-hidden group cursor-pointer" tabindex="0">
+        <div class="relative h-36 md:h-44 overflow-hidden">
+            <img src="images/NID02010-HDR.jpg" alt="Superior Room" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" loading="lazy">
+            <div class="absolute top-3 right-3">
+                <span class="room-type glass-frost px-3 py-1 rounded-full text-white text-[9px] tracking-wider">Double</span>
+            </div>
+        </div>
+        <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
+                <h3 class="room-name font-display text-lg th-heading">Superior Room</h3>
+            </div>
+            <p class="room-description th-body text-xs leading-relaxed font-body font-light mb-3">Handcrafted interiors, premium materials, and natural morning light.</p>
+            <p class="th-body text-[10px]">2 Guests · 28 m² · King Bed</p>
+            <p class="th-body text-[10px]">Street View · French Balcony</p>
+            <div class="room-amenities" hidden>
+                <span>King Bed</span>
+                <span>Free Wi-Fi</span>
+                <span>Air Conditioning</span>
+                <span>Flat-Screen TV</span>
+                <span>Walk-in Shower</span>
+                <span>Premium Amenities</span>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="room-tilt reveal">
+    <article class="room-card th-card rounded-3xl overflow-hidden group cursor-pointer" tabindex="0">
+        <div class="relative h-36 md:h-44 overflow-hidden">
+            <img src="images/NID02005-HDR.jpg" alt="Deluxe Room" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" loading="lazy">
+            <div class="absolute top-3 right-3">
+                <span class="room-type glass-frost px-3 py-1 rounded-full text-white text-[9px] tracking-wider">Double / Triple</span>
+            </div>
+        </div>
+        <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
+                <h3 class="room-name font-display text-lg th-heading">Deluxe Room</h3>
+            </div>
+            <p class="room-description th-body text-xs leading-relaxed font-body font-light mb-3">Generous proportions, luxury bedding, views of Mostar from your private balcony.</p>
+            <p class="th-body text-[10px]">2–3 Guests · 35 m² · King or Twin</p>
+            <p class="th-body text-[10px]">City &amp; Old Town · Balcony</p>
+            <div class="room-amenities" hidden>
+                <span>Private Balcony</span>
+                <span>Free Wi-Fi</span>
+                <span>Air Conditioning</span>
+                <span>Flat-Screen TV</span>
+                <span>Walk-in Shower</span>
+                <span>Seating Area</span>
+            </div>
+        </div>
+    </article>
+</div>
+
+<div class="room-tilt reveal">
+    <article class="room-card th-card rounded-3xl overflow-hidden group cursor-pointer" tabindex="0">
+        <div class="relative h-36 md:h-44 overflow-hidden">
+            <img src="images/NID01990-HDR.jpg" alt="One-Bedroom Suite" class="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-110" loading="lazy">
+            <div class="absolute top-3 right-3">
+                <span class="room-type glass-frost px-3 py-1 rounded-full text-white text-[9px] tracking-wider">Suite</span>
+            </div>
+        </div>
+        <div class="p-5">
+            <div class="flex items-start justify-between mb-2">
+                <h3 class="room-name font-display text-lg th-heading">One-Bedroom Suite</h3>
+            </div>
+            <p class="room-description th-body text-xs leading-relaxed font-body font-light mb-3">Separate living area, panoramic balcony overlooking the city and mountains.</p>
+            <p class="th-body text-[10px]">2–3 Guests · 48 m² · King Bed</p>
+            <p class="th-body text-[10px]">Panoramic City · Terrace</p>
+            <div class="room-amenities" hidden>
+                <span>Separate Living Area</span>
+                <span>Private Terrace</span>
+                <span>Free Wi-Fi</span>
+                <span>Flat-Screen TV</span>
+                <span>Coffee Machine</span>
+            </div>
+        </div>
+    </article>
+</div>
+</div>
+<div class="mt-6 md:mt-8 flex flex-wrap justify-center gap-4 text-[11px] font-body th-body stagger">
+<span>• Check-in 2:00 PM</span>
+<span>• Check-out 12:00 PM</span>
+<span>• Breakfast included</span>
+<span>• Secure parking</span>
+</div>
+</div>
+</section>
+<section id="dining" class="scene scene-light">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative">
+<div class="text-center mb-8 md:mb-12">
+<div class="mask-reveal">
+<span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-4">Fine Dining</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl th-heading font-light leading-tight">
+<span class="split-text">A Culinary Journey</span>
+<br>
+<span class="italic split-text" data-delay=".3">Through Herzegovina</span>
+</h2>
+<p class="reveal mt-5 th-body text-sm md:text-base leading-relaxed max-w-xl mx-auto font-body font-light">Rooted in regional heritage, elevated through precision and restraint — curated by Emporia's culinary team.</p>
+</div>
+<div id="menu-categories" class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+  <article class="th-card rounded-2xl p-5 reveal"><span class="th-icon text-2xl">◷</span><h3 class="font-display text-base th-heading mb-0.5">Breakfast</h3><p class="th-accent text-[9px] tracking-wider font-body mb-2 uppercase">8 AM – 12 PM</p><p class="th-body text-xs leading-relaxed font-body font-light">Sweet and savoury dishes from local ingredients.</p></article>
+  <article class="th-card rounded-2xl p-5 reveal"><span class="th-icon text-2xl">♧</span><h3 class="font-display text-base th-heading mb-0.5">Lunch</h3><p class="th-accent text-[9px] tracking-wider font-body mb-2 uppercase">12 – 4 PM</p><p class="th-body text-xs leading-relaxed font-body font-light">Mediterranean plates paired with estate wines.</p></article>
+  <article class="th-card rounded-2xl p-5 reveal"><span class="th-icon text-2xl">♨</span><h3 class="font-display text-base th-heading mb-0.5">Dinner</h3><p class="th-accent text-[9px] tracking-wider font-body mb-2 uppercase">6 – 11 PM</p><p class="th-body text-xs leading-relaxed font-body font-light">Eastern-inspired, elevated through precision.</p></article>
+  <article class="th-card rounded-2xl p-5 reveal"><span class="th-icon text-2xl">♢</span><h3 class="font-display text-base th-heading mb-0.5">Wine Pairing</h3><p class="th-accent text-[9px] tracking-wider font-body mb-2 uppercase">By reservation</p><p class="th-body text-xs leading-relaxed font-body font-light">Artisan wines paired with complementary dishes.</p></article>
+</div>
+<div class="mt-6 md:mt-8 flex justify-center reveal">
+<div class="inline-flex items-center gap-2.5 th-card rounded-full px-5 py-2.5">
+<span class="w-1.5 h-1.5 rounded-full bg-gold shrink-0"></span>
+<p class="th-body text-xs font-body font-light">Fine dining is available exclusively to hotel guests.</p>
+</div>
+</div>
+</div>
+</section>
+<section data-horizontal class="scene-dark">
+<div class="sticky top-0 h-screen overflow-hidden flex items-center">
+<div class="horizontal-track flex items-center gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-10 lg:px-16 will-change-transform" id="dining-track">
+ <div class="horizontal-track flex items-center gap-4 sm:gap-5 md:gap-6 px-4 sm:px-6 md:px-10 lg:px-16 will-change-transform" id="dining-track">
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID01990-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID01995-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02005-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02010-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02015-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02020-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02025-HDR.jpg" alt="Hotel bathroom" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02035-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02040-HDR.jpg" alt="Hotel hallway" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02045-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02050-HDR.jpg" alt="Hotel bathroom" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02055-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02065-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+    <article class="relative shrink-0 w-[80vw] sm:w-[60vw] md:w-[45vw] lg:w-[35vw] h-[70vh] rounded-3xl overflow-hidden group">
+        <img src="images/NID02070-HDR.jpg" alt="Hotel room" class="w-full h-full object-cover">
+    </article>
+
+</div>
+</div>
+</section>
+<section id="emporia-table" class="scene scene-dark video-scene">
+<video class="video-scene-media" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+<source src="images/rooftop_video.mp4" type="video/mp4">
+</video>
+<div class="video-scene-overlay" aria-hidden="true"></div>
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full text-center relative z-10">
+<div class="reveal cinematic">
+<blockquote class="font-display text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl th-heading italic font-light leading-snug max-w-3xl mx-auto px-4">“Every sunset tastes different with a glass of wine from our estate.”</blockquote>
+<p class="mt-4 th-accent text-[10px] md:text-xs tracking-[0.25em] uppercase font-body">— The Emporia Table</p>
+</div>
+</div>
+</section>
+<section id="pool" class="scene scene-dark">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 items-center">
+<div class="reveal from-left">
+<div class="relative overflow-hidden rounded-3xl h-[40vh] md:h-[55vh] group">
+<img src="images/pool.jpg" alt="Rooftop pool" class="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105" loading="lazy">
+<div class="absolute bottom-4 left-4">
+<span class="glass-frost px-4 py-2 rounded-full text-white text-[10px] tracking-wider uppercase">Indoor Pool</span>
+</div>
+</div>
+</div>
+<div>
+<div class="mask-reveal">
+<span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-4">Rooftop Spa &amp; Pool</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl th-heading font-light leading-tight">
+<span class="split-text">A Private Sanctuary</span>
+<br>
+<span class="italic split-text" data-delay=".25">Above the City</span>
+</h2>
+<p class="reveal mt-4 th-body text-sm leading-relaxed max-w-md font-body font-light">Indoor swimming pool enclosed in retractable glass, sauna and expansive terrace — open to the sky and sunset.</p>
+<div id="pool-features" class="mt-5 grid grid-cols-3 gap-3">
+  <div class="text-center p-3 rounded-xl th-card"><span class="th-icon">≈</span><span class="block text-[9px] th-body font-body">Indoor Pool</span></div><div class="text-center p-3 rounded-xl th-card"><span class="th-icon">☼</span><span class="block text-[9px] th-body font-body">Rooftop Terrace</span></div><div class="text-center p-3 rounded-xl th-card"><span class="th-icon">◷</span><span class="block text-[9px] th-body font-body">Daily Access</span></div><div class="text-center p-3 rounded-xl th-card"><span class="th-icon">♟</span><span class="block text-[9px] th-body font-body">Spa Lounge</span></div><div class="text-center p-3 rounded-xl th-card"><span class="th-icon">♡</span><span class="block text-[9px] th-body font-body">Family Hours</span></div><div class="text-center p-3 rounded-xl th-card"><span class="th-icon">◇</span><span class="block text-[9px] th-body font-body">Guests Only</span></div>
+</div>
+<div class="mt-5 space-y-2">
+<div class="th-card rounded-xl overflow-hidden">
+<button class="accordion-trigger w-full flex items-center justify-between p-3 text-left">
+<span class="font-body text-xs th-heading">Access policy</span>
+<span class="th-accent text-sm shrink-0 ml-2">↓</span>
+</button>
+<div class="accordion-content">
+<p class="px-3 pb-3 th-body text-xs leading-relaxed font-body font-light">Exclusive to hotel guests. Guests 16+ have unlimited access. Children under 16 welcome with an adult during family hours: 10 AM–12 PM and 4–6 PM.</p>
+</div>
+</div>
+<div class="th-card rounded-xl overflow-hidden">
+<button class="accordion-trigger w-full flex items-center justify-between p-3 text-left">
+<span class="font-body text-xs th-heading">Facilities</span>
+<span class="th-accent text-sm shrink-0 ml-2">↓</span>
+</button>
+<div class="accordion-content">
+<p class="px-3 pb-3 th-body text-xs leading-relaxed font-body font-light">Indoor pool, sauna, panoramic terrace, loungers, and bar &amp; dining service by Emporia's culinary team.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="events" class="scene-dark story-section" data-story>
+<div class="story-sticky">
+<div class="story-content">
+<div class="story-slides">
+<article class="story-slide is-active" data-slide="0">
+<span class="story-label">Arrival</span>
+<h2 class="story-heading">A Serene <em>Entrance</em></h2>
+<p class="story-text">By night, the hotel glows above the boulevar &mdash; a quiet threshold between Mostar's old streets and eighteen rooms of considered calm.</p>
+</article>
+<article class="story-slide" data-slide="1">
+<span class="story-label">Accommodation</span>
+<h2 class="story-heading">Rooms Designed for Mindfulness</em></h2>
+<p class="story-text">Natural materials, warm textures and panoramic windows frame every suite &mdash; refined comfort with nothing superfluous.</p>
+</article>
+<article class="story-slide" data-slide="2">
+<span class="story-label">Detail</span>
+<h2 class="story-heading">Considered to the <em>Smallest Detail</em></h2>
+<p class="story-text">Backlit mirrors, honed stone and hand-finished fixtures &mdash; every bathroom carries the same quiet precision as the rooms themselves.</p>
+</article>
+<article class="story-slide" data-slide="3">
+<span class="story-label">Dining &amp; Wine</span>
+<h2 class="story-heading">A Toast to Mostar</em></h2>
+<p class="story-text">An intimate wine wall and lounge bar invite slower evenings, pouring the finest labels from vineyards just beyond the city.</p>
+</article>
+<article class="story-slide" data-slide="4">
+<span class="story-label">Rooftop</span>
+<h2 class="story-heading">Where the City <em>Fades Away</em></h2>
+<p class="story-text">Above the rooftops of Mostar, a private terrace unfolds beneath the stars &mdash; candlelight, quiet conversation, and a skyline that never repeats itself.</p>
+</article>
+<article class="story-slide" data-slide="5">
+<span class="story-label">Spa &amp; Pool</span>
+<h2 class="story-heading">Water, Light, and <em>Silence</em></h2>
+<p class="story-text">An indoor pool wrapped in glass looks out over the illuminated city &mdash; a place to swim past midnight, suspended above it all.</p>
+</article>
+</div>
+<div class="story-meta">
+<span class="story-count"><span class="story-count-current">01</span><span class="story-count-sep">/</span><span class="story-count-total">06</span></span>
+<div class="story-progress-track"><div class="story-progress-fill"></div></div>
+</div>
+</div>
+<div class="story-media">
+<figure class="story-image is-active">
+    <img src="images/exterior1.jpg" alt="Hotel exterior" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/NID01990-HDR.jpg" alt="Suite interior" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/bathroom1.jpg" alt="Bathroom" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/inside1.jpg" alt="Wine lounge and bar" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/IMG-20260730-WA0010.jpg" alt="Pool" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/IMG-20260801-WA0000.jpg" alt="Hotel aerial view" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/IMG-20260731-WA0028.jpg" alt="Lobby" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/IMG-20260731-WA0030.jpg" alt="Lounge" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/IMG-20260731-WA0031.jpg" alt="Seating area" loading="lazy" decoding="async">
+</figure>
+
+<figure class="story-image">
+    <img src="images/pool.jpg" alt="Pool at night" loading="lazy" decoding="async">
+</figure>
+</div>
+</div>
+</section>
+<section id="gallery" class="scene scene-dark video-scene">
+    <video class="video-scene-media" autoplay muted loop playsinline preload="metadata" aria-hidden="true">
+        <source src="images/pool_video.mp4" type="video/mp4">
+    </video>
+
+    <div class="video-scene-overlay" aria-hidden="true"></div>
+
+    <div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full text-center relative z-10">
+        <div class="mask-reveal">
+            <span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-5">
+                Gallery
+            </span>
+        </div>
+
+        <h2 class="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl th-heading font-light leading-tight">
+            <span class="split-text">Through Our</span><br>
+            <span class="italic split-text" data-delay=".25">Lens</span>
+        </h2>
+
+        <p class="reveal mt-5 th-body text-sm md:text-base leading-relaxed max-w-xl mx-auto font-body font-light">
+            A curated collection of moments — each frame captures the essence of the Emporia experience.
+        </p>
+    </div>
+</section>
+
+<section id="gallery-horizontal" data-horizontal class="scene-light">
+    <div class="sticky top-0 h-screen overflow-hidden flex items-center">
+
+        <div class="horizontal-track flex items-center gap-3 sm:gap-4 md:gap-5 px-4 sm:px-6 md:px-10 lg:px-16 will-change-transform" id="gallery-track">
+
+            <!-- 1 -->
+            <article class="gallery-card relative shrink-0 w-[70vw] sm:w-[55vw] md:w-[45vw] lg:w-[38vw] h-[68vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="0" tabindex="0">
+                <img src="images/rooftop1.jpg" alt="Luxury Rooftop" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Luxury Rooftop</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">1 / 10</span>
+                </div>
+            </article>
+
+            <!-- 2 -->
+            <article class="gallery-card relative shrink-0 w-[55vw] sm:w-[40vw] md:w-[30vw] lg:w-[24vw] h-[52vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="1" tabindex="0">
+                <img src="images/rooftop2.jpg" alt="Sky Lounge" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Sky Lounge</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">2 / 10</span>
+                </div>
+            </article>
+
+            <!-- 3 -->
+            <article class="gallery-card relative shrink-0 w-[70vw] sm:w-[55vw] md:w-[45vw] lg:w-[38vw] h-[68vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="2" tabindex="0">
+                <img src="images/rooftop3.jpg" alt="Panoramic View" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Panoramic View</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">3 / 10</span>
+                </div>
+            </article>
+
+            <!-- 4 -->
+            <article class="gallery-card relative shrink-0 w-[55vw] sm:w-[40vw] md:w-[30vw] lg:w-[24vw] h-[52vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="3" tabindex="0">
+                <img src="images/rooftop4.jpg" alt="Sunset Terrace" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Sunset Terrace</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">4 / 10</span>
+                </div>
+            </article>
+
+            <!-- 5 -->
+            <article class="gallery-card relative shrink-0 w-[70vw] sm:w-[55vw] md:w-[45vw] lg:w-[38vw] h-[68vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="4" tabindex="0">
+                <img src="images/rooftop6.jpg" alt="Golden Hour" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Golden Hour</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">5 / 10</span>
+                </div>
+            </article>
+
+            <!-- 6 -->
+            <article class="gallery-card relative shrink-0 w-[55vw] sm:w-[40vw] md:w-[30vw] lg:w-[24vw] h-[52vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="5" tabindex="0">
+                <img src="images/IMG-20260730-WA0010.jpg" alt="Hotel Exterior" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Hotel Exterior</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">6 / 10</span>
+                </div>
+            </article>
+
+            <!-- 7 -->
+            <article class="gallery-card relative shrink-0 w-[70vw] sm:w-[55vw] md:w-[45vw] lg:w-[38vw] h-[68vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="6" tabindex="0">
+                <img src="images/IMG-20260731-WA0028.jpg" alt="Reception" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Reception</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">7 / 10</span>
+                </div>
+            </article>
+
+            <!-- 8 -->
+            <article class="gallery-card relative shrink-0 w-[55vw] sm:w-[40vw] md:w-[30vw] lg:w-[24vw] h-[52vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="7" tabindex="0">
+                <img src="images/IMG-20260731-WA0030.jpg" alt="Lounge" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Lounge</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">8 / 10</span>
+                </div>
+            </article>
+
+            <!-- 9 -->
+            <article class="gallery-card relative shrink-0 w-[70vw] sm:w-[55vw] md:w-[45vw] lg:w-[38vw] h-[68vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="8" tabindex="0">
+                <img src="images/IMG-20260731-WA0031.jpg" alt="Lobby" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Lobby</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">9 / 10</span>
+                </div>
+            </article>
+
+            <!-- 10 -->
+            <article class="gallery-card relative shrink-0 w-[55vw] sm:w-[40vw] md:w-[30vw] lg:w-[24vw] h-[52vh] rounded-3xl overflow-hidden cursor-pointer group" data-gallery="9" tabindex="0">
+                <img src="images/IMG-20260801-WA0000.jpg" alt="Indoor Pool" class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2">
+                    <span class="gallery-caption text-white text-[10px]">Indoor Pool</span>
+                    <span class="gallery-counter text-white/40 text-[8px]">10 / 10</span>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+<section class="scene scene-dark">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative">
+<div class="reveal text-center mb-10 md:mb-14">
+<span class="th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium">Key Experiences</span>
+<h3 class="mt-2 font-display text-2xl md:text-3xl th-heading font-light">What Awaits You</h3>
+</div>
+<div id="highlights" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10 md:mb-14">
+  <article class="th-card rounded-3xl p-6 text-center"><div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3 th-icon">◇</div><h4 class="font-display text-base th-heading mb-2">Wine-tasting &amp; Vineyard Walks</h4><p class="th-body text-xs leading-relaxed font-body">Guided experiences through estate vineyards and the tasting tunnel.</p></article>
+  <article class="th-card rounded-3xl p-6 text-center"><div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3 th-icon">▣</div><h4 class="font-display text-base th-heading mb-2">Explore the Ottoman Quarter</h4><p class="th-body text-xs leading-relaxed font-body">Mostar's Old Bridge — a UNESCO landscape shaped over five centuries.</p></article>
+  <article class="th-card rounded-3xl p-6 text-center"><div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3 th-icon">≈</div><h4 class="font-display text-base th-heading mb-2">Rooftop Spa &amp; Pool</h4><p class="th-body text-xs leading-relaxed font-body">Indoor pool in retractable glass, sauna, and panoramic terrace.</p></article>
+  <article class="th-card rounded-3xl p-6 text-center"><div class="w-11 h-11 rounded-full bg-gold/10 flex items-center justify-center mx-auto mb-3 th-icon">△</div><h4 class="font-display text-base th-heading mb-2">Mountain Panoramas</h4><p class="th-body text-xs leading-relaxed font-body">Mountains frame every perspective — from balconies to the rooftop.</p></article>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto stagger">
+<div class="flex items-start gap-3 p-4 th-card rounded-xl">
+<span class="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0">
+</span>
+<p class="th-body text-xs font-body font-light leading-relaxed">Pets welcome upon prior request</p>
+</div>
+<div class="flex items-start gap-3 p-4 th-card rounded-xl">
+<span class="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0">
+</span>
+<p class="th-body text-xs font-body font-light leading-relaxed">Discreet underground access</p>
+</div>
+<div class="flex items-start gap-3 p-4 th-card rounded-xl">
+<span class="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0">
+</span>
+<p class="th-body text-xs font-body font-light leading-relaxed">Warm, attentive service with highest discretion</p>
+</div>
+</div>
+</div>
+</section>
+<section id="booking" class="scene scene-light">
+<div class="max-w-3xl mx-auto px-6 md:px-10 w-full relative">
+<div id="booking-form">
+<div class="text-center mb-8">
+<div class="mask-reveal">
+<span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-4">Reservation</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl th-heading font-light leading-tight">
+<span class="split-text">Reserve Your</span>
+<br>
+<span class="italic th-accent split-text" data-delay=".2">Escape</span>
+</h2>
+</div>
+<div id="booking-progress" class="flex items-center justify-center gap-3 mb-8">
+  <button data-booking-step="1" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-body bg-gold text-white"><span class="booking-number">1</span><span class="booking-check" hidden>✓</span></button><span data-booking-connector="1" class="w-10 md:w-14 h-px th-divider"></span>
+  <button data-booking-step="2" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-body th-card th-body"><span class="booking-number">2</span><span class="booking-check" hidden>✓</span></button><span data-booking-connector="2" class="w-10 md:w-14 h-px th-divider"></span>
+  <button data-booking-step="3" class="w-8 h-8 rounded-full flex items-center justify-center text-xs font-body th-card th-body"><span class="booking-number">3</span><span class="booking-check" hidden>✓</span></button>
+</div>
+<div class="reveal">
+<div id="booking-card" class="th-card rounded-3xl p-6 md:p-8">
+  <section class="booking-step" data-step="1"><h3 class="font-display text-xl th-heading mb-5">Dates &amp; Room</h3><div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4"><label class="block th-body text-[9px] font-body tracking-wider uppercase">Check In<input id="check-in" type="date" class="block mt-1 w-full p-2.5 rounded-xl border th-divider bg-white/50 text-sm th-heading"></label><label class="block th-body text-[9px] font-body tracking-wider uppercase">Check Out<input id="check-out" type="date" class="block mt-1 w-full p-2.5 rounded-xl border th-divider bg-white/50 text-sm th-heading"></label></div><label class="block th-body text-[9px] font-body tracking-wider uppercase mb-4">Guests<select id="guests" class="block mt-1 w-full p-2.5 rounded-xl border th-divider bg-white/50 text-sm th-heading"><option>1</option><option selected>2</option><option>3</option></select></label><p class="th-body text-[9px] font-body tracking-wider uppercase mb-2">Room</p><div class="grid grid-cols-2 gap-2 mb-5"><button class="room-choice p-3 rounded-xl text-left th-card"><span class="room-choice-name text-xs th-heading font-body block">Superior Double</span><span class="th-accent text-[10px]"></span></button><button class="room-choice p-3 rounded-xl text-left th-card"><span class="room-choice-name text-xs th-heading font-body block">Deluxe Double</span><span class="th-accent text-[10px]"></span></button><button class="room-choice p-3 rounded-xl text-left th-card"><span class="room-choice-name text-xs th-heading font-body block">One-Bedroom Suite</span><span class="th-accent text-[10px]"></span></button><button class="room-choice p-3 rounded-xl text-left th-card"><span class="room-choice-name text-xs th-heading font-body block">Single Room</span><span class="th-accent text-[10px]"></span></button></div><button id="booking-to-step-2" class="w-full py-3 rounded-full th-btn-primary text-xs tracking-[0.12em] uppercase">Continue →</button></section>
+  <section class="booking-step" data-step="2" hidden><h3 class="font-display text-xl th-heading mb-5">Guest Details</h3><div class="grid grid-cols-2 gap-3 mb-4"><label class="th-body text-[9px] uppercase">First Name<input class="block mt-1 w-full p-2.5 rounded-xl border th-divider bg-white/50 th-heading"></label><label class="th-body text-[9px] uppercase">Last Name<input class="block mt-1 w-full p-2.5 rounded-xl border th-divider bg-white/50 th-heading"></label></div><label class="th-body text-[9px] uppercase">Email<input type="email" class="block mt-1 mb-5 w-full p-2.5 rounded-xl border th-divider bg-white/50 th-heading"></label><div class="flex gap-3"><button id="booking-to-step-1" class="px-5 py-3 rounded-full th-btn-ghost text-xs uppercase">Back</button><button id="booking-to-step-3" class="flex-1 py-3 rounded-full th-btn-primary text-xs uppercase">Review →</button></div></section>
+  <section class="booking-step" data-step="3" hidden><h3 class="font-display text-xl th-heading mb-5">Confirm</h3><div class="space-y-2 mb-6 text-xs font-body"><p class="flex justify-between border-b th-divider py-2"><span>Room</span><span id="review-room"></span></p><p class="flex justify-between border-b th-divider py-2"><span>Check-in</span><span id="review-check-in"></span></p><p class="flex justify-between border-b th-divider py-2"><span>Check-out</span><span id="review-check-out"></span></p><p class="flex justify-between border-b th-divider py-2"><span>Guests</span><span id="review-guests"></span></p></div><div class="flex gap-3"><button id="booking-back-to-step-2" class="px-5 py-3 rounded-full th-btn-ghost text-xs uppercase">Back</button><button id="booking-confirm" class="flex-1 py-3 rounded-full bg-gold text-white text-xs uppercase">Confirm Reservation</button></div></section>
+</div>
+</div>
+</div>
+<div id="booking-thanks" hidden class="max-w-xl mx-auto px-6 text-center">
+<div class="p-10 th-card rounded-3xl">
+<div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center mx-auto mb-5 text-gold text-2xl">✓</div>
+<h3 class="font-display text-3xl th-heading font-light mb-2">Thank You</h3>
+<p class="th-body text-sm font-body font-light mb-6">Your inquiry has been received. Confirmation within 4 hours.</p>
+<button id="new-reservation" class="px-6 py-2.5 rounded-full th-btn-ghost text-xs tracking-[0.12em] uppercase hover:opacity-80 transition-opacity">New Reservation</button>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="scene scene-dark">
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 w-full relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+<div>
+<div class="mask-reveal">
+<span class="inline-block th-label text-[11px] tracking-[0.35em] uppercase font-body font-medium mb-4">Contact</span>
+</div>
+<h2 class="font-display text-3xl sm:text-4xl md:text-5xl th-heading font-light leading-tight mb-5">
+<span class="split-text">We're Here</span>
+<br>
+<span class="italic split-text" data-delay=".2">for You</span>
+</h2>
+<div class="space-y-3 stagger">
+<div class="flex items-start gap-3 p-3 rounded-xl th-card">
+<span class="th-icon">⌖</span>
+<div>
+<p class="text-[9px] th-body font-body tracking-wider uppercase">Address</p>
+<p class="text-sm th-heading font-body">Bulevar Narodne Revolucije 53, Mostar, BiH</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl th-card">
+<span class="th-icon">☎</span>
+<div>
+<p class="text-[9px] th-body font-body tracking-wider uppercase">Telephone</p>
+<p class="text-sm th-heading font-body">+387 63 001 005</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl th-card">
+<span class="th-icon">✉</span>
+<div>
+<p class="text-[9px] th-body font-body tracking-wider uppercase">Email</p>
+<p class="text-sm th-heading font-body">office@bulevaremporia.com</p>
+</div>
+</div>
+<div class="flex items-start gap-3 p-3 rounded-xl th-card">
+<span class="th-icon">◷</span>
+<div>
+<p class="text-[9px] th-body font-body tracking-wider uppercase">Reception</p>
+<p class="text-sm th-heading font-body">24 hours</p>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal from-right">
+<div id="contact-card" class="th-card rounded-3xl p-6 md:p-8">
+  <form id="contact-form"><h3 class="font-display text-xl th-heading mb-5">Send a Message</h3><div class="space-y-3"><label class="block th-body text-[9px] uppercase">Name<input required placeholder="Your name" class="mt-1 w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm th-heading"></label><label class="block th-body text-[9px] uppercase">Email<input required type="email" placeholder="your@email.com" class="mt-1 w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm th-heading"></label><label class="block th-body text-[9px] uppercase">Message<textarea required rows="4" placeholder="How can we help?" class="mt-1 w-full p-3 rounded-xl bg-white/5 border border-white/10 text-sm th-heading resize-none"></textarea></label><button class="w-full py-3 rounded-full bg-gold text-white text-xs tracking-[0.12em] uppercase">Send</button></div></form>
+  <div id="contact-success" class="text-center py-8" hidden><div class="w-12 h-12 rounded-full bg-gold/15 flex items-center justify-center mx-auto mb-3 text-gold">✓</div><h4 class="font-display text-xl th-heading mb-1">Sent</h4><p class="th-body text-xs font-body">We'll respond within 24 hours.</p><button id="send-another" class="mt-4 px-5 py-2 rounded-full th-btn-ghost text-[10px] uppercase">Send Another</button></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="relative bg-rich-black text-white border-t border-white/[0.04]">
+<div class="py-8 overflow-hidden select-none" aria-hidden="true">
+<div class="animate-marquee-slow whitespace-nowrap">
+<span class="inline-block font-display text-5xl md:text-7xl text-white/[0.015] font-light tracking-wider">HOTEL BOULEVAR · URBAN RETREAT · BY · EMPORIA · MOSTAR · HOTEL BOULEVAR · URBAN RETREAT · BY · EMPORIA · MOSTAR ·</span>
+</div>
+</div>
+<div class="max-w-[1440px] mx-auto px-6 md:px-10 lg:px-16 py-12 md:py-16">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+<div class="col-span-2 md:col-span-1">
+<span class="font-display text-lg tracking-[0.15em]">BOULEVAR</span>
+<p class="text-[8px] tracking-[0.35em] uppercase text-white/20 mt-1 font-body">Urban retreat by Emporia</p>
+<p class="mt-4 text-white/25 text-xs leading-relaxed font-body font-light max-w-xs">18 rooms — where silence meets elegance.</p>
+</div>
+<div>
+<h4 class="text-[9px] tracking-[0.25em] uppercase text-white/30 font-body mb-4">Explore</h4>
+<ul class="space-y-2">
+<li>
+<a href="#hotel">Hotel</a>
+</li>
+<li>
+<a href="#rooms">Rooms</a>
+</li>
+<li>
+<a href="#dining">Dining</a>
+</li>
+<li>
+<a href="#pool">Spa &amp; Pool</a>
+</li>
+<li>
+<a href="#events">Events</a>
+</li>
+<li>
+<a href="#gallery">Gallery</a>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-[9px] tracking-[0.25em] uppercase text-white/30 font-body mb-4">Info</h4>
+<ul class="space-y-2 text-xs font-body text-white/25">
+<li>Check-in: 2:00 PM</li>
+<li>Check-out: 12:00 PM</li>
+<li>Breakfast: 8 AM – 12 PM</li>
+<li>Pets welcome</li>
+<li>Secure parking</li>
+</ul>
+</div>
+<div>
+<h4 class="text-[9px] tracking-[0.25em] uppercase text-white/30 font-body mb-4">Contact</h4>
+<ul class="space-y-2 text-xs font-body text-white/25">
+<li>
+<a href="tel:+38763001005">+387 63 001 005</a>
+</li>
+<li>
+<a href="mailto:office@bulevaremporia.com">office@bulevaremporia.com</a>
+</li>
+<li>Mostar, BiH</li>
+<li class="pt-1">
+<a href="https://instagram.com/boulevaremporia" target="_blank" rel="noopener noreferrer">@boulevaremporia</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-6 border-t border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-3">
+<p class="text-white/15 text-[10px] font-body">© <span id="year">
+</span> Hotel Boulevar by Emporia</p>
+<div class="flex items-center gap-5 text-[9px] font-body text-white/15">
+<a href="#">Privacy</a>
+<a href="#">Terms</a>
+<a href="#">Cookies</a>
+</div>
+<p class="text-white/10 text-[10px] font-body">Made with <span class="text-burgundy">♥</span> from Eminetic</p>
+</div>
+</div>
+</footer>
+<button id="back-to-top" class="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-gold/90 text-white flex items-center justify-center hover:bg-gold hover:shadow-[0_0_20px_rgba(201,169,110,0.3)] hover:-translate-y-1 transition-all duration-300" aria-label="Back to top" hidden>↑</button>
+<div id="modal-root">
+  <div id="room-modal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4" hidden><button id="room-modal-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-md" aria-label="Close room details"></button><div class="modal-panel relative bg-ivory rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl"><button id="room-modal-close" class="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/80" aria-label="Close">×</button><img id="room-modal-image" alt="" class="w-full h-56 object-cover rounded-t-3xl"><div class="p-6"><span id="room-modal-type" class="text-gold text-[10px] tracking-[0.2em] uppercase font-body"></span><h3 id="room-modal-title" class="font-display text-2xl text-rich-black mt-1"></h3><span id="room-modal-price" class="font-display text-2xl text-gold"></span><p id="room-modal-description" class="mt-3 text-soft-gray text-sm font-body"></p><div id="room-modal-amenities" class="mt-4 flex flex-wrap gap-2"></div><a id="room-modal-book" href="#booking" class="mt-6 block w-full py-3 rounded-full bg-gold text-white text-sm tracking-[0.12em] uppercase text-center">Reserve This Room</a></div></div></div>
+  <div id="gallery-modal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl" hidden><button id="gallery-modal-backdrop" class="absolute inset-0" aria-label="Close gallery"></button><button id="gallery-modal-close" class="absolute top-6 right-6 text-white z-10" aria-label="Close">×</button><button id="gallery-prev" class="absolute left-4 md:left-8 text-white z-10" aria-label="Previous">‹</button><button id="gallery-next" class="absolute right-4 md:right-8 text-white z-10" aria-label="Next">›</button><div class="relative max-w-5xl max-h-[85vh] mx-4"><img id="gallery-modal-image" alt="" class="max-w-full max-h-[80vh] object-contain rounded-2xl"><div class="mt-3 text-center"><p id="gallery-modal-caption" class="text-white font-display text-lg"></p><p id="gallery-modal-count" class="text-white/40 text-xs font-body mt-1"></p></div></div></div>
+</div>
+</div>
+<script src="js/main.js" defer>
+</script>
+</body>
+</html>
